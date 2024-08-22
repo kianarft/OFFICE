@@ -14,7 +14,7 @@ import lombok.experimental.SuperBuilder;
 @Entity(name = "employeeEntity")
 @Table(name = "employee_tbl")
 
-public class Employee {
+public class Employee extends Base {
     @Id
     @SequenceGenerator(name = "employeeSeq", sequenceName = "employee_seq", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "employeeSeq")
@@ -29,5 +29,6 @@ public class Employee {
 
     @Column(name = "hourly payment")
     private String hourlyPayment;
+
 
 }
