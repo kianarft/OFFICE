@@ -1,7 +1,6 @@
 package com.mftplus.office.model.entity;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.Max;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -9,7 +8,6 @@ import lombok.experimental.SuperBuilder;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.atomic.AtomicReferenceArray;
 
 @NoArgsConstructor
 @Getter
@@ -35,4 +33,6 @@ public class Department {
     @OneToMany(mappedBy = "department")
     private List<Employee> employeeList = new ArrayList<>();
 
+    public void Department(boolean b) {
+    }
 }
