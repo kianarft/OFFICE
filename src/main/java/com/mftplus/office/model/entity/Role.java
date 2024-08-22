@@ -1,6 +1,7 @@
 package com.mftplus.office.model.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Pattern;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -13,20 +14,22 @@ import java.util.List;
 @Setter
 @SuperBuilder
 
-@Entity(name = "employeeEntity")
-@Table(name = "employee_tbl")
+@Entity(name = "roleEntity")
+@Table(name = "role_tbl")
 
-public class Role {
+public class Role extends Base{
     @Id
     @SequenceGenerator(name = "employeeSeq", sequenceName = "employee_seq", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "employeeSeq")
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "role_name", length = 50)
-    private String roleName;
+    @Column(name = "name_role", length = 50)
+    @Pattern(regexp = "^[a-zA-Z\\s]{3,50}$" ,message = "Invalid Name")
+    private String nameRole;
 
     @Column(name = "description_role")
+    @Pattern(regexp = "^[a-zA-Z\\s]{3,50}$")
     private String descriptionRole;
 
     @ManyToMany(mappedBy = "roles")

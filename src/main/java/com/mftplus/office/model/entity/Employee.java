@@ -1,6 +1,7 @@
 package com.mftplus.office.model.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Pattern;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -21,10 +22,12 @@ public class Employee extends Base {
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "employee_name", length = 50)
-    private String employeeName;
+    @Column(name = "name_employee", length = 50)
+    @Pattern(regexp = "^[a-zA-Z\\s]{3,50}$" ,message = "Invalid Name")
+    private String nameEmployee;
 
-    @Column(name = "position_employee")
+    @Column(name = "position_employee", length = 50)
+    @Pattern(regexp = "^[a-zA-Z\\s]{3,50}$" ,message = "Invalid Position")
     private String positionEmployee;
 
     @Column(name = "hourly payment")

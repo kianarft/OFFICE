@@ -2,16 +2,14 @@ package com.mftplus.office.model.service;
 
 import com.mftplus.office.model.entity.Employee;
 import jakarta.enterprise.context.ApplicationScoped;
-import jakarta.persistence.Entity;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.EntityManager;
-import jakarta.transaction.Transactional;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.List;
 
 @ApplicationScoped
-public class EmployeeService {
+public class EmployeeService implements Serializable {
 
     @PersistenceContext(unitName = "office")
     private EntityManager entityManager;
@@ -21,16 +19,14 @@ public class EmployeeService {
         return employee;
     }
 
-    @Transactional
     public Employee edit(Employee employee) throws Exception {
-        Employee foundEmployee = entityManager.find(Employee.class, employee.getId());
-        if (foundEmployee != null) {
+        Employee foundCardPayment = entityManager.find(Employee.class, employee.getId());
+        if (foundCardPayment != null) {
             entityManager.merge(employee);
         }
         return employee;
     }
 
-    @Transactional
     public Employee remove(Long id) throws Exception {
         Employee employee = entityManager.find(Employee.class, id);
         if (employee != null) {
@@ -40,26 +36,24 @@ public class EmployeeService {
         return employee;
     }
 
-    @Transactional
     public List<Employee> findAll() throws Exception {
         return entityManager
                 .createQuery("select e from employeeEntity e where e.deleted = false", Employee.class)
                 .getResultList();
     }
 
-    @Transactional
-    public Employee findByName(String employeeName) throws Exception {
+    public Employee FindByName(String nameEmployee) throws Exception {
         return entityManager
-                .createQuery("select oo from employeeEntity oo where oo.employeeName =:employeeName", Employee.class)
-                .setParameter("employeeName", employeeName)
+                .createQuery("select e from employeeEntity e where e.nameEmployee =: nameEmployee", Employee.class)
+                .setParameter("nameEmployee", nameEmployee)
                 .getSingleResult();
     }
 
-    @Transactional
-    public Employee findByPosition(String employeePosition) throws Exception {
+    public Employee FindByPosition (String positionEmployee) throws Exception {
         return entityManager
-                .createQuery("select oo from employeeEntity oo where oo.employeePosition =:employeePosition", Employee.class)
-                .setParameter("employeePosition", employeePosition)
+                .createQuery("select e from employeeEntity e where e.positionEmployee =: positionEmployee", Employee.class)
+                .setParameter("positionEmployee", positionEmployee)
                 .getSingleResult();
     }
 }
+
