@@ -20,12 +20,11 @@ public class RoleService {
     }
 
     @Transactional
-    public Role edit(Role role) throws Exception {
+    public void edit(Role role) throws Exception {
         Role foundRole = entityManager.find(Role.class, role.getId());
         if (foundRole != null) {
             entityManager.merge(role);
         }
-        return role;
     }
 
     @Transactional
