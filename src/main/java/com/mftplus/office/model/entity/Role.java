@@ -31,7 +31,4 @@ public class Role extends Base{
     @Column(name = "description_role")
     @Pattern(regexp = "^[a-zA-Z\\s]{3,50}$")
     private String descriptionRole;
-
-    @ManyToMany(mappedBy = "roles")
-    private List<Employee> employeeList = new ArrayList<>();
 }

@@ -7,6 +7,9 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.SuperBuilder;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @NoArgsConstructor
 @Getter
 @Setter
@@ -32,6 +35,22 @@ public class Employee extends Base {
 
     @Column(name = "hourly payment")
     private String hourlyPayment;
+
+    @OneToOne
+    private Role role;
+
+    @ManyToOne
+    private Department department;
+
+    @ManyToMany
+    private List<Project> projects;
+
+    public void addProject(Project project){
+        if (projects == null){
+            projects=new ArrayList<>();
+        }
+        projects.add(project);
+    }
 
 
 }

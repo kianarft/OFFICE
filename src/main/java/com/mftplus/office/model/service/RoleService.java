@@ -1,6 +1,5 @@
 package com.mftplus.office.model.service;
 
-import com.mftplus.office.model.entity.Department;
 import com.mftplus.office.model.entity.Role;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.persistence.PersistenceContext;
