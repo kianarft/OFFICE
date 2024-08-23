@@ -17,7 +17,7 @@ import java.util.List;
 @Entity(name = "departmentEntity")
 @Table(name = "department_tbl")
 
-public class Department {
+public class Department extends Base{
     @Id
     @SequenceGenerator(name = "departmentSeq", sequenceName = "department_seq", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "depatmentSeq")
