@@ -1,13 +1,10 @@
 package com.mftplus.office.model.entity;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.Pattern;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.SuperBuilder;
-
 import java.time.LocalDateTime;
-
 @NoArgsConstructor
 @Getter
 @Setter
@@ -15,7 +12,7 @@ import java.time.LocalDateTime;
 
 @Entity(name = "worklogEntity")
 @Table(name = "worklog_tbl")
-public class worklog {
+public class Worklog {
     @Id
     @SequenceGenerator(name = "worklogSeq", sequenceName = "worklog_seq", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "worklogSeq")
@@ -26,7 +23,7 @@ public class worklog {
     @Column(name = "check_out_time")
  private LocalDateTime checkOutTime;
 
- //   @ManyToOne
-   // private Employee employee;
+    @ManyToOne
+  private Employee employee;
  }
 
