@@ -1,5 +1,6 @@
 package com.mftplus.office.model.service;
 
+import com.mftplus.office.model.entity.Department;
 import com.mftplus.office.model.entity.Employee;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.persistence.PersistenceContext;
@@ -43,6 +44,11 @@ public class EmployeeService implements Serializable {
         return entityManager
                 .createQuery("select e from employeeEntity e where e.deleted = false", Employee.class)
                 .getResultList();
+    }
+
+    @Transactional
+    public Employee findById(Long id) throws Exception {
+        return entityManager.find(Employee.class, id);
     }
 
     @Transactional

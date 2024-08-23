@@ -1,7 +1,6 @@
 package com.mftplus.office.model.service;
 
 import com.mftplus.office.model.entity.Department;
-import com.mftplus.office.model.entity.Role;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
@@ -21,22 +20,20 @@ public class DepartmentService {
     }
 
     @Transactional
-    public Department edit(Department department) throws Exception {
+    public void edit(Department department) throws Exception {
         Department foundPerson = entityManager.find(Department.class, department.getId());
         if (foundPerson != null) {
             entityManager.merge(department);
         }
-        return department;
     }
 
     @Transactional
-    public Department remove(Long id) throws Exception {
+    public void remove(Long id) throws Exception {
         Department department = entityManager.find(Department.class, id);
         if (department != null) {
             department.setDeleted(true);
             entityManager.merge(department);
         }
-        return department;
     }
 
     @Transactional
@@ -48,8 +45,7 @@ public class DepartmentService {
 
     @Transactional
     public Department findById(Long id) throws Exception {
-        Department department = entityManager.find(Department.class, id);
-        return department;
+        return entityManager.find(Department.class, id);
     }
 
     @Transactional

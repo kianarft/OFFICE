@@ -1,5 +1,6 @@
 package com.mftplus.office.model.service;
 
+import com.mftplus.office.model.entity.Department;
 import com.mftplus.office.model.entity.Role;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.persistence.PersistenceContext;
@@ -42,6 +43,11 @@ public class RoleService {
         return entityManager
                 .createQuery("select r from roleEntity r where r.deleted = false", Role.class)
                 .getResultList();
+    }
+
+    @Transactional
+    public Role findById(Long id) throws Exception {
+        return entityManager.find(Role.class, id);
     }
 
     @Transactional
