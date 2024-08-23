@@ -30,6 +30,9 @@ public class Department extends Base{
     @Column(name = "description_department")
     private String descriptionDepartment;
 
+    @Column(name = "location_department")
+    private String LocationDepartment;
+
     @OneToMany(mappedBy = "department")
     private List<Employee> employeeList = new ArrayList<>();
 
