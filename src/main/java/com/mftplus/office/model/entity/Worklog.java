@@ -1,10 +1,13 @@
 package com.mftplus.office.model.entity;
+
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.SuperBuilder;
+
 import java.time.LocalDateTime;
+
 @NoArgsConstructor
 @Getter
 @Setter
@@ -19,11 +22,11 @@ public class Worklog {
     @Column(name = "id")
     private Long id;
     @Column(name = "check_in_time")
- private LocalDateTime checkInTime;
+    private LocalDateTime checkInTime;
     @Column(name = "check_out_time")
- private LocalDateTime checkOutTime;
+    private LocalDateTime checkOutTime;
 
     @ManyToOne
-  private Employee employee;
- }
+    private Employee employee;
+}
 
