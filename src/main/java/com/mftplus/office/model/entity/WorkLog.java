@@ -15,14 +15,17 @@ import java.time.LocalDateTime;
 
 @Entity(name = "worklogEntity")
 @Table(name = "worklog_tbl")
+
 public class WorkLog extends Base{
     @Id
     @SequenceGenerator(name = "worklogSeq", sequenceName = "worklog_seq", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "worklogSeq")
     @Column(name = "id")
     private Long id;
+
     @Column(name = "check_in_time")
     private LocalDateTime checkInTime;
+
     @Column(name = "check_out_time")
     private LocalDateTime checkOutTime;
 
