@@ -23,8 +23,8 @@ public class EmployeeService implements Serializable {
 
     @Transactional
     public void edit(Employee employee) throws Exception {
-        Employee foundCardPayment = entityManager.find(Employee.class, employee.getId());
-        if (foundCardPayment != null) {
+        Employee foundEmployee = entityManager.find(Employee.class, employee.getId());
+        if (foundEmployee != null) {
             entityManager.merge(employee);
         }
     }

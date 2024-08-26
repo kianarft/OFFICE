@@ -18,7 +18,7 @@ import java.util.List;
 @Entity(name = "projectEntity")
 @Table(name = "project_tbl")
 
-public class Project {
+public class Project extends Base{
     @Id
     @SequenceGenerator(name = "projectSeq", sequenceName = "project_seq", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "projectSeq")
