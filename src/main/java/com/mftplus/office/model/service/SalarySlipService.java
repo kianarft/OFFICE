@@ -15,6 +15,10 @@ public class SalarySlipService implements Serializable {
     @PersistenceContext(unitName = "office")
     private EntityManager entityManager;
 
+    public static SalarySlipService getService() {
+        return null;
+    }
+
     @Transactional
     public SalarySlip save(SalarySlip salarySlip) throws Exception {
         entityManager.persist(salarySlip);

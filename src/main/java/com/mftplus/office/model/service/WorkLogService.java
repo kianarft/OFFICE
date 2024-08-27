@@ -14,6 +14,10 @@ public class WorkLogService implements Serializable {
     @PersistenceContext(unitName = "office")
     private EntityManager entityManager;
 
+    public static WorkLogService getService() {
+        return null;
+    }
+
     @Transactional
     public WorkLog save(WorkLog worklog) throws Exception {
         entityManager.persist(worklog);
