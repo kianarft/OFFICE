@@ -34,7 +34,7 @@ public class Employee extends Base {
     private String positionEmployee;
 
     @Column(name = "hourly payment")
-    private String hourlyPayment;
+    private int hourlyPayment;
 
     @OneToOne
     private Role role;

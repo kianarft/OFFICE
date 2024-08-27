@@ -14,6 +14,10 @@ public class RoleService {
     @PersistenceContext(unitName = "office")
     private EntityManager entityManager;
 
+    public static RoleService getService() {
+        return null;
+    }
+
     public Role save(Role role) throws Exception {
         entityManager.persist(role);
         return role;

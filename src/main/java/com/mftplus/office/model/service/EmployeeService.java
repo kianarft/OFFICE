@@ -15,6 +15,10 @@ public class EmployeeService implements Serializable {
     @PersistenceContext(unitName = "office")
     private EntityManager entityManager;
 
+    public static EmployeeService getService() {
+        return null;
+    }
+
     @Transactional
     public Employee save(Employee employee) throws Exception {
         entityManager.persist(employee);
@@ -67,7 +71,7 @@ public class EmployeeService implements Serializable {
     }
 
     @Transactional
-    public Employee FindByHourlyPayment (String hourlyPayment) throws Exception {
+    public Employee FindByHourlyPayment (int hourlyPayment) throws Exception {
         return entityManager
                 .createQuery("select e from employeeEntity e where e.hourlyPayment =: hourlyPayment", Employee.class)
                 .setParameter("hourlyPayment", hourlyPayment)
