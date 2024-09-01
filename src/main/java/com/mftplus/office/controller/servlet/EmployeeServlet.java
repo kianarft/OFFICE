@@ -48,11 +48,13 @@ public class EmployeeServlet extends HttpServlet {
 
             BeanValidator<Employee> employeeBeanValidator = new BeanValidator<>();
             if (employeeBeanValidator.validate(employee1).isEmpty()) {
+                assert EmployeeService.getService() != null;
                 System.out.println(EmployeeService.getService().save(employee1));
             } else {
                 System.out.println(employeeBeanValidator.validate(employee1));
             }
 
+            assert EmployeeService.getService() != null;
             System.out.println(EmployeeService.getService().save(employee2));
         } catch (Exception e) {
             System.out.println(e.getMessage());
