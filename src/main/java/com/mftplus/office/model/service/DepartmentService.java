@@ -6,13 +6,16 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.transaction.Transactional;
 
+import java.io.Serializable;
 import java.util.List;
 
 @ApplicationScoped
-public class DepartmentService {
+public class DepartmentService implements Serializable {
     @PersistenceContext(unitName = "office")
     private EntityManager entityManager;
-
+    public static DepartmentService getService() {
+        return null;
+    }
     @Transactional
     public Department save(Department department) throws Exception {
         entityManager.persist(department);
