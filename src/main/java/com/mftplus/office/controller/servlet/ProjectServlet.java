@@ -51,14 +51,14 @@ public class ProjectServlet extends HttpServlet {
 
             BeanValidator<Project> projectBeanValidator = new BeanValidator<>();
             if (projectBeanValidator.validate(project1).isEmpty()) {
-                assert getService() != null;
-                System.out.println(getService().save(project1));
+//                assert getService() != null;
+//                System.out.println(getService().save(project1));
             } else {
                 System.out.println(projectBeanValidator.validate(project1));
             }
 
-            assert getService() != null;
-            System.out.println(getService().save(project2));
+//            assert getService() != null;
+//            System.out.println(getService().save(project2));
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
