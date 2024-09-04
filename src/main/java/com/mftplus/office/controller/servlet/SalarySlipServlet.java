@@ -24,7 +24,7 @@ import java.io.IOException;
         )
 )
 
-@WebServlet("/SalarySlip.do")
+@WebServlet("/salarySlip.do")
 public class SalarySlipServlet extends HttpServlet {
 
     @Override

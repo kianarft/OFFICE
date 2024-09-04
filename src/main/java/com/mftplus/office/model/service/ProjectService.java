@@ -15,6 +15,10 @@ public class ProjectService implements Serializable {
     @PersistenceContext(unitName = "office")
     private EntityManager entityManager;
 
+    public static boolean getService() {
+        return false;
+    }
+
     @Transactional
     public Project save(Project project) throws Exception {
         entityManager.persist(project);

@@ -28,11 +28,11 @@ public class Project extends Base{
     @Column(name = "project_name")
     private String projectName;
 
-    @Column(name = "start_date")
-    private LocalDateTime startDate;
+    @Column(name = "project_start_date")
+    private LocalDateTime projectStartDate;
 
-    @Column(name = "bonus")
-    private LocalDateTime endDate;
+    @Column(name = "project_bonus")
+    private LocalDateTime projectEndDate;
 
     @ManyToMany(mappedBy = "projects")
     private List<Employee> employees=

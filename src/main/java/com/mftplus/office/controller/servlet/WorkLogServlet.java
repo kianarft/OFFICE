@@ -29,7 +29,7 @@ import java.time.LocalDateTime;
         )
 )
 
-@WebServlet("/WorkLog.do")
+@WebServlet("/workLog.do")
 public class WorkLogServlet extends HttpServlet {
 
     @Override
