@@ -22,7 +22,7 @@
         width: 300px;
         height: 300px;
         position: absolute;
-        top: 203px;
+        top: 220px;
         left: 530px;
         display: inline;
         box-shadow: -2px -2px 10px gray;
@@ -33,27 +33,27 @@
         width: 300px;
         height: 300px;
         position: absolute;
-        top: 203px;
+        top: 220px;
         left: 830px;
         box-shadow: -2px -2px 10px gray;
         box-shadow: 2px 2px 7px gray;
         background-color: #c9c1c1;
     }
 
-    /*MONTH*/
-    .container form .month {
+    /*TIME IN*/
+    .container form .in-time {
         width: 40px;
         height: 30px;
         border: 2px solid darkblue;
         border-top-left-radius: 7px;
         border-bottom-left-radius: 7px;
         display: inline-block;
-        margin-top: 50px;
+        margin-top: 67px;
         margin-left: 30px;
         padding: 5px;
     }
 
-    .container form .icon-month {
+    .container form .icon-time-in {
         color: darkblue;
         font-size: 20px;
         position: relative;
@@ -73,7 +73,7 @@
         border: 2px solid darkblue;
         font-size: 14px;
     }
-    /*END MONTH*/
+    /*END TIME IN*/
 
     /*TIME*/
     .container form .time {
@@ -83,7 +83,7 @@
         border-top-left-radius: 7px;
         border-bottom-left-radius: 7px;
         display: inline-block;
-        margin-top: 30px;
+        margin-top: 47px;
         margin-left: 30px;
         padding: 5px;
     }
@@ -96,7 +96,7 @@
         bottom: 2px;
     }
 
-    .container form .inp-time {
+    .container form .inp-time-in {
         display: inline-block;
         width: 200px;
         height: 30px;
@@ -110,20 +110,20 @@
     }
     /*END TIME*/
 
-    /*SALERY*/
-    .container form .salery {
+    /*TIME OUT*/
+    .container form .out-time {
         width: 40px;
         height: 30px;
         border: 2px solid darkblue;
         border-top-left-radius: 7px;
         border-bottom-left-radius: 7px;
         display: inline-block;
-        margin-top: 30px;
+        margin-top: 47px;
         margin-left: 30px;
         padding: 5px;
     }
 
-    .container form .icon-salary {
+    .container form .icon-time-out {
         color: darkblue;
         font-size: 20px;
         position: relative;
@@ -131,7 +131,7 @@
         bottom: 2px;
     }
 
-    .container form .inp-salery {
+    .container form .inp-time-out {
         display: inline-block;
         width: 200px;
         height: 30px;
@@ -143,7 +143,7 @@
         border: 2px solid darkblue;
         font-size: 14px;
     }
-    /*END SALERY*/
+    /*END TIME OUT*/
 
     .container button {
         border: 2px solid darkblue;
@@ -166,24 +166,18 @@
 </head>
 <h1>Department</h1>
 <div class="container">
-    <img src="/Image/Employee.jpg" alt="Description of image">
+    <img src="/Image/WorkLog.jpg" alt="Description of image">
 
     <form action="">
-        <div class="month">
-            <span class="bi bi-calendar icon-month"></span>
+        <div class="in-time">
+            <span class="bi bi-clock icon-time-in"></span>
         </div>
-        <input type="month" name="name"  placeholder="  Enter Month" class="inp-month">
+        <input type="time" name="Time In"  placeholder="  Enter In Time" class="inp-time-in">
 
-        <div class="time">
-            <span class="bi bi-clock icon-time"></span>
+        <div class="out-time">
+            <span class="bi bi-clock icon-time-out"></span>
         </div>
-        <input type="time" name="position" placeholder="  Enter Total Hour" class="inp-time">
-
-        <div class="salery">
-            <span class="bi bi-cash-stack icon-salary"></span>
-        </div>
-        <input type="number" name="time" placeholder="  Enter Total Salary" class="inp-salery">
-
+        <input type="time" name="Time Out" placeholder="  Enter Out Time" class="inp-time-out">
 
         <button type="button">Submit</button>
     </form>
