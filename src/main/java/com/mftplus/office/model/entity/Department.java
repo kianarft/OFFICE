@@ -36,6 +36,12 @@ public class Department extends Base{
     @OneToMany(mappedBy = "department")
     private List<Employee> employeeList = new ArrayList<>();
 
+    @OneToMany(mappedBy = "department")
+    private List<Section> sectionList;
+
+    @ManyToOne
+    private Organization organization;
+
     public void Department(boolean b) {
     }
 }

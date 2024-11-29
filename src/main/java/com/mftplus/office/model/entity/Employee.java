@@ -52,5 +52,7 @@ public class Employee extends Base {
         projects.add(project);
     }
 
+    @ManyToOne
+    private Section section;
 
 }

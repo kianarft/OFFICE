@@ -1,0 +1,22 @@
+package com.mftplus.office.model.entity;
+
+import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.experimental.SuperBuilder;
+
+@NoArgsConstructor
+@Getter
+@Setter
+@SuperBuilder
+
+@Entity(name = "attachmentEntity")
+@Table(name = "attachment_tbl")
+public class Attachment {
+    @Id
+    @SequenceGenerator(name = "sectionSeq", sequenceName = "section_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sectionSeq")
+    @Column(name = "id")
+    private Long id;
+}
