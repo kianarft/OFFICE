@@ -162,12 +162,12 @@
     <div class="email">
         <span class="bi bi-envelope icon"></span>
     </div>
-    <input type="email" name="email" id="" placeholder="  Enter Your Email" class="inp-email">
+    <input type="email" name="email" id="emailId" placeholder="  Enter Your Email" class="inp-email">
 
     <div class="pass">
         <span class="bi bi-key icon"></span>
     </div>
-    <input type="password" name="password" id="" placeholder="  Enter Your Password" class="inp-pass">
+    <input type="password" name="password" id="passwordId" placeholder="  Enter Your Password" class="inp-pass">
 
     <input type="checkbox" name="remember" id="rembr">
     <p>Remember me</p>

@@ -127,13 +127,13 @@
                resourceName="UserDatabase"/>
       </Realm>
 
-      <Realm className="org.apache.catalina.realm.DataSourceRealm"
-       dataSourceName="jdbc/JtaDataSource"
-       userTable="user_tbl"
-       userNameCol="user_name"
-       userCredCol="user_pass"
-       userRoleTable="user_roles"
-       roleNameCol="role_name"/>
+<!--      <Realm className="org.apache.catalina.realm.DataSourceRealm"-->
+<!--       dataSourceName="jdbc/JtaDataSource"-->
+<!--       userTable="user_tbl"-->
+<!--       userNameCol="user_name"-->
+<!--       userCredCol="user_pass"-->
+<!--       userRoleTable="user_roles"-->
+<!--       roleNameCol="role_name"/>-->
 
       <Host name="localhost"  appBase="webapps"
             unpackWARs="true" autoDeploy="true">
