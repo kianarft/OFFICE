@@ -42,6 +42,4 @@ public class Department extends Base{
     @ManyToOne
     private Organization organization;
 
-    public void Department(boolean b) {
-    }
 }

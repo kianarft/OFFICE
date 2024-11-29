@@ -18,7 +18,7 @@ import java.io.Serializable;
 public class Base implements Serializable {
 
     @JsonbTransient
-    private boolean edditing = false;
+    private boolean editing = false;
 
     @JsonbTransient
     private boolean deleted = false;
