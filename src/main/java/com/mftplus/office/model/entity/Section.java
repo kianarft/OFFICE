@@ -24,7 +24,8 @@ public class Section extends Base {
     @Column(name = "id")
     private Long id;
 
-    private String title;
+    @Column(name = "title_section", length = 50)
+    private String titleSection;
 
     @ManyToOne
     private Department department;

@@ -1,13 +1,11 @@
 package com.mftplus.office.model.entity;
 
-import jakarta.persistence.*;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
-import lombok.experimental.SuperBuilder;
-
 import java.util.List;
-
+import jakarta.persistence.*;
+import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
 @NoArgsConstructor
 @Getter
@@ -24,7 +22,8 @@ public class Organization extends Base {
     @Column(name = "id")
     private Long id;
 
-    private String name;
+    @Column(name = "name_organization", length = 50)
+    private String organizationName;
 
     @OneToMany(mappedBy = "organization")
     private List<Department> departmentList;

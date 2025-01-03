@@ -1,9 +1,9 @@
 package com.mftplus.office.model.entity;
 
-import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.Getter;
+import jakarta.persistence.*;
+import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
 @NoArgsConstructor
@@ -13,10 +13,12 @@ import lombok.experimental.SuperBuilder;
 
 @Entity(name = "attachmentEntity")
 @Table(name = "attachment_tbl")
+
 public class Attachment {
     @Id
-    @SequenceGenerator(name = "sectionSeq", sequenceName = "section_seq", allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sectionSeq")
+    @SequenceGenerator(name = "attachmentSeq", sequenceName = "attachment_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "attachmentSeq")
+
     @Column(name = "id")
     private Long id;
 }
