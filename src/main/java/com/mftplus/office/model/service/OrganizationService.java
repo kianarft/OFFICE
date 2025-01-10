@@ -9,12 +9,12 @@ import com.mftplus.office.model.entity.Organization;
 import jakarta.enterprise.context.ApplicationScoped;
 
 @ApplicationScoped
-public class OraginizationService implements Serializable{
+public class OrganizationService implements Serializable{
 
     @PersistenceContext(unitName = "office")
     private EntityManager entityManager;
 
-    public static OraginizationService getService() {return null;}
+    public static OrganizationService getService() {return null;}
 
     @Transactional
     public Organization save(Organization organization) throws Exception {
